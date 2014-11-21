@@ -8,7 +8,7 @@ Try it:
 
 http://www.nshen.net/as2ts/
 
-Convertion:
+Conversion:
 ---
 
 - `Boolean` to `boolean`
