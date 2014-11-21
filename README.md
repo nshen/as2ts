@@ -39,7 +39,7 @@ Conversion:
 - `trace` to `console.log`
 
 
-Contect me:
+Contact me:
 ---
 
 nshen121[at]gmail.com
