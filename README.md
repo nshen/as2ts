@@ -2,7 +2,6 @@ AS2TS
 =====
 
 Convert `ActionScript 3` to `TypeScript` using pure HTML5.
----
 
 Try it: 
 ---
