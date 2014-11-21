@@ -138,10 +138,15 @@ module as2ts
             str = str.replace(/public\s+class/,"export class");
 
             // constructor
-            var className = /export.class\s+(\w+)/.exec(str)[1];
-            var reg = new RegExp("public\\s+function\\s+"+className);
-            str = str.replace(reg,"constructor");
-            str = str.replace(/(constructor.+):.*void/,"$1")//delete :void
+            var classNameResult = /export.class\s+(\w+)/.exec(str);
+            if(classNameResult != null)
+            {
+                var className = classNameResult[1];
+                var reg = new RegExp("public\\s+function\\s+"+className);
+                str = str.replace(reg,"constructor");
+                str = str.replace(/(constructor.+):.*void/,"$1")//delete :void
+            }
+ 
 
 
             //  'internal' to 'public'
