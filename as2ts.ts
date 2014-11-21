@@ -79,6 +79,7 @@ module as2ts
             if(asFiles.length <= 0 )
             {
                 document.getElementById("files_count").innerHTML = "No .as files found.";
+                document.getElementById('list').innerHTML = '';
                 return;
             }
 
