@@ -18,6 +18,8 @@ Conversion:
 - `package` to `module`
 - comment out `import` statements ?
 - `public class` to `export class`
+- `public final class` to `export class`
+- `public interface` to `export interface`
 - `public function class_name(...):void` to `constructor(...)`
 - `internal` to `public`
 - `static (public|private|protected)` to  `(public|private|protected) static`
