@@ -136,7 +136,7 @@ module as2ts
             //  comment out import statements
             str = str.replace(/import/g,"//import"); //?   /// <reference path="Validation.ts" />
             //  'public class' to 'export class'
-            str = str.replace(/public\s+class/,"export class");
+            str = str.replace(/public\s+(final\s+)?class/,"export class");
 
             // constructor
             var classNameResult = /export.class\s+(\w+)/.exec(str);
