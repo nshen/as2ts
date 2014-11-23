@@ -100,7 +100,10 @@ var as2ts;
             //  comment out import statements
             str = str.replace(/import/g, "//import"); //?   /// <reference path="Validation.ts" />
             //  'public class' to 'export class'
+            //  'public final class' to 'export class'
             str = str.replace(/public\s+(final\s+)?class/, "export class");
+            //  'public interface' to 'export interface'
+            str = str.replace(/public\s+interface/g, "export interface");
             // constructor
             var classNameResult = /export.class\s+(\w+)/.exec(str);
             if (classNameResult != null) {
@@ -141,6 +144,8 @@ var as2ts;
             str = str.replace(/new\s+<.+>(\[.*\])/g, "$1");
             //  'Vector.<uint>([1, 2, 3])' to '[1, 2, 3]'
             str = str.replace(/(=|\s)Vector\.<.+>\((\[.*\])\)/g, "$2");
+            //TODO: add 'this.' to all instance methods
+            //TODO: add 'className.' to all static methods
             return str;
         };
         as2ts.prototype.finishConvert = function () {

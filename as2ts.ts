@@ -137,7 +137,10 @@ module as2ts
             //  comment out import statements
             str = str.replace(/import/g,"//import"); //?   /// <reference path="Validation.ts" />
             //  'public class' to 'export class'
+            //  'public final class' to 'export class'
             str = str.replace(/public\s+(final\s+)?class/,"export class");
+            //  'public interface' to 'export interface'
+            str = str.replace(/public\s+interface/g,"export interface");
 
             // constructor
             var classNameResult = /export.class\s+(\w+)/.exec(str);
@@ -192,6 +195,8 @@ module as2ts
             //  'Vector.<uint>([1, 2, 3])' to '[1, 2, 3]'
             str = str.replace(/(=|\s)Vector\.<.+>\((\[.*\])\)/g,"$2");
 
+            //TODO: add 'this.' to all instance methods
+            //TODO: add 'className.' to all static methods
             return str;
 
         }
