@@ -60,6 +60,7 @@ module as2ts
             if(files.length <= 0)
                 return;
 
+            this._zip = new JSZip();
             var output = [];
             var asFiles:File[] = [];
             var f:File;

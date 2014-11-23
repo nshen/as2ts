@@ -28,6 +28,7 @@ var as2ts;
                 var files = e.dataTransfer.files; // FileList object.
                 if (files.length <= 0)
                     return;
+                _this._zip = new JSZip();
                 var output = [];
                 var asFiles = [];
                 var f;
